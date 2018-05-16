@@ -22,6 +22,9 @@ class TaxViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
+      
+      publicFormatter.numberStyle = NumberFormatter.Style.currency
+      
       textFieldSubTotal.alignment = NSTextAlignment.right
       textFieldSubTotal.floatValue = 0.00
       
@@ -47,8 +50,6 @@ class TaxViewController: NSViewController {
     
     let numberTaxAmount = floatTaxAmount as NSNumber  // used for formatting
     
-    publicFormatter.numberStyle = NumberFormatter.Style.currency
-    
     labelTaxAmount.stringValue = publicFormatter.string(from: numberTaxAmount)!
     
     let numberTotalAfterTaxAmount = (floatTaxAmount + floatSubTotalAmount) as NSNumber  // used for formatting
@@ -56,8 +57,6 @@ class TaxViewController: NSViewController {
     publicTotalAfterTax = numberTotalAfterTaxAmount
     
     labelTotalAfterTax.stringValue = publicFormatter.string(from: numberTotalAfterTaxAmount)!
-    
-    
     
   }
 }

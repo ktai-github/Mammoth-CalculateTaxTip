@@ -40,7 +40,7 @@ class TipViewController: NSViewController {
     
     }
   
-  override func viewDidAppear() {
+  override func viewWillAppear() {
     
     labelSubTotalAmount.stringValue = publicFormatter.string(from: publicSubTotalAmount)!
     
