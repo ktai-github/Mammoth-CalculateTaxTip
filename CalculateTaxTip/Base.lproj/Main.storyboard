@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14109"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -732,84 +733,108 @@
             <objects>
                 <viewController title="Tax" id="cdT-90-xnE" customClass="TaxViewController" customModule="CalculateTaxTip" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="UD1-LT-GsN">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="316" height="284"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tyT-pO-dbx">
-                                <rect key="frame" x="18" y="263" width="61" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tyT-pO-dbx">
+                                <rect key="frame" x="18" y="247" width="61" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="57" id="AZp-Sx-88Z"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sub Total" id="gXL-uo-nrd">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PLE-Uo-7Fv">
-                                <rect key="frame" x="18" y="238" width="56" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tax Rate" id="NLW-jh-spS">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LL4-xE-PH9">
-                                <rect key="frame" x="18" y="213" width="76" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LL4-xE-PH9">
+                                <rect key="frame" x="18" y="173" width="76" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="whf-cQ-2jV"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tax Amount" id="fwj-8F-4NI">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xJn-E3-fHf">
-                                <rect key="frame" x="211" y="213" width="70" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="taxAmount" id="w54-bP-AVC">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hZa-bn-4kP">
-                                <rect key="frame" x="200" y="188" width="81" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="totalAfterTax" id="aMJ-0p-Chh">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8lV-Ya-Haz">
-                                <rect key="frame" x="18" y="188" width="92" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8lV-Ya-Haz">
+                                <rect key="frame" x="18" y="141" width="92" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="88" id="vVV-rZ-n1O"/>
+                                </constraints>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Total After Tax" id="Mxs-ui-QTK">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T2h-9a-RW7">
-                                <rect key="frame" x="183" y="261" width="96" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="XbD-4t-Jlf">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yf9-Xh-0WF">
-                                <rect key="frame" x="183" y="236" width="96" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="wgn-jR-y6B">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aQT-EX-0zU">
-                                <rect key="frame" x="165" y="142" width="121" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <stackView distribution="fill" orientation="vertical" alignment="trailing" spacing="15" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Dd-Dh-Wwg">
+                                <rect key="frame" x="171" y="141" width="125" height="123"/>
+                                <subviews>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="T2h-9a-RW7">
+                                        <rect key="frame" x="0.0" y="101" width="125" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="125" id="ZTx-UJ-00K"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="XbD-4t-Jlf">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Yf9-Xh-0WF">
+                                        <rect key="frame" x="0.0" y="64" width="125" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="125" id="kge-Pf-rdO"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="wgn-jR-y6B">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="xJn-E3-fHf">
+                                        <rect key="frame" x="-2" y="32" width="129" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="125" id="9zc-xh-uyk"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="taxAmount" id="w54-bP-AVC">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hZa-bn-4kP">
+                                        <rect key="frame" x="-2" y="0.0" width="129" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="125" id="1qL-dI-Ldr"/>
+                                        </constraints>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="totalAfterTax" id="aMJ-0p-Chh">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aQT-EX-0zU">
+                                <rect key="frame" x="14" y="13" width="288" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="276" id="WyF-3a-6by"/>
+                                </constraints>
                                 <buttonCell key="cell" type="push" title="Calculate Tax" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="egu-38-cdo">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -818,7 +843,39 @@
                                     <action selector="calculateTaxButtonClicked:" target="cdT-90-xnE" id="SDl-XL-BaM"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PLE-Uo-7Fv">
+                                <rect key="frame" x="18" y="210" width="84" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="akV-kJ-bPA"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Tax Rate %" id="NLW-jh-spS">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="aQT-EX-0zU" secondAttribute="bottom" constant="20" id="0NB-nP-4ja"/>
+                            <constraint firstItem="LL4-xE-PH9" firstAttribute="top" secondItem="xJn-E3-fHf" secondAttribute="top" id="6Lv-eR-8VJ"/>
+                            <constraint firstItem="8lV-Ya-Haz" firstAttribute="leading" secondItem="UD1-LT-GsN" secondAttribute="leading" constant="20" id="BmL-A0-2Od"/>
+                            <constraint firstItem="tyT-pO-dbx" firstAttribute="top" secondItem="UD1-LT-GsN" secondAttribute="top" constant="20" id="CUy-9G-KX3"/>
+                            <constraint firstItem="0Dd-Dh-Wwg" firstAttribute="top" secondItem="UD1-LT-GsN" secondAttribute="top" constant="20" id="Gyg-zU-T4i"/>
+                            <constraint firstItem="LL4-xE-PH9" firstAttribute="top" secondItem="PLE-Uo-7Fv" secondAttribute="bottom" constant="20" id="L3D-5U-a37"/>
+                            <constraint firstItem="tyT-pO-dbx" firstAttribute="leading" secondItem="UD1-LT-GsN" secondAttribute="leading" constant="20" id="LJa-aZ-CS7"/>
+                            <constraint firstItem="PLE-Uo-7Fv" firstAttribute="leading" secondItem="UD1-LT-GsN" secondAttribute="leading" constant="20" id="Q4f-33-tki"/>
+                            <constraint firstItem="tyT-pO-dbx" firstAttribute="top" secondItem="T2h-9a-RW7" secondAttribute="top" id="QM1-xC-ZQn"/>
+                            <constraint firstItem="8lV-Ya-Haz" firstAttribute="top" secondItem="hZa-bn-4kP" secondAttribute="top" id="RTv-OK-b9l"/>
+                            <constraint firstAttribute="trailing" secondItem="aQT-EX-0zU" secondAttribute="trailing" constant="20" id="UbA-KR-oLq"/>
+                            <constraint firstItem="aQT-EX-0zU" firstAttribute="centerX" secondItem="UD1-LT-GsN" secondAttribute="centerX" id="UvT-Cr-DyP"/>
+                            <constraint firstItem="PLE-Uo-7Fv" firstAttribute="top" secondItem="tyT-pO-dbx" secondAttribute="bottom" constant="20" id="ZNK-rF-ATT"/>
+                            <constraint firstItem="aQT-EX-0zU" firstAttribute="leading" secondItem="UD1-LT-GsN" secondAttribute="leading" constant="20" id="ayM-6Z-R9D"/>
+                            <constraint firstItem="8lV-Ya-Haz" firstAttribute="top" secondItem="LL4-xE-PH9" secondAttribute="bottom" constant="15" id="col-Ua-bu5"/>
+                            <constraint firstItem="LL4-xE-PH9" firstAttribute="leading" secondItem="UD1-LT-GsN" secondAttribute="leading" constant="20" id="jTb-hN-epC"/>
+                            <constraint firstAttribute="trailing" secondItem="0Dd-Dh-Wwg" secondAttribute="trailing" constant="20" id="lMH-pH-lj1"/>
+                            <constraint firstItem="PLE-Uo-7Fv" firstAttribute="top" secondItem="Yf9-Xh-0WF" secondAttribute="top" id="ret-VR-S7H"/>
+                            <constraint firstItem="aQT-EX-0zU" firstAttribute="top" secondItem="0Dd-Dh-Wwg" secondAttribute="bottom" constant="100" id="v2O-tq-Ie9"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="labelTaxAmount" destination="xJn-E3-fHf" id="2du-Jk-Sw1"/>
@@ -829,7 +886,7 @@
                 </viewController>
                 <customObject id="YuY-ZE-oAz" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="753" y="439"/>
+            <point key="canvasLocation" x="686" y="439"/>
         </scene>
         <!--Tip-->
         <scene sceneID="slj-dv-yoe">
@@ -870,15 +927,6 @@
                                 <rect key="frame" x="276" y="191" width="29" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="15%" id="qmr-Pe-Ivo">
-                                    <font key="font" metaFont="system"/>
-                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VM5-Np-3Aw">
-                                <rect key="frame" x="179" y="141" width="127" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="totalAfterTipAmount" id="Afy-ks-E6V">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -948,20 +996,35 @@
                                     <action selector="calculateTipButtonClicked:" target="Uek-jX-5Of" id="B55-gX-49h"/>
                                 </connections>
                             </button>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VM5-Np-3Aw">
+                                <rect key="frame" x="181" y="141" width="127" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="totalAfterTipAmount" id="Afy-ks-E6V">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="buttonCalculateTip" destination="8Fh-wi-hjH" id="EjJ-v4-jsl"/>
+                        <outlet property="labelSubTotal" destination="o92-GS-ASx" id="dxx-W9-cpl"/>
                         <outlet property="labelSubTotalAmount" destination="77I-hH-S8B" id="QU6-BI-0Qx"/>
+                        <outlet property="labelTip" destination="hz7-Hg-PDH" id="UL7-lz-Wbp"/>
                         <outlet property="labelTipAmount" destination="4cZ-Tf-Iwd" id="1HP-Oa-o0g"/>
-                        <outlet property="labelTipPercentage" destination="4D2-gW-y33" id="Juo-7I-pkL"/>
+                        <outlet property="labelTipPercentage" destination="4D2-gW-y33" id="Slo-xP-KmQ"/>
+                        <outlet property="labelTipSlider" destination="iIf-FW-5NZ" id="oHv-2v-881"/>
+                        <outlet property="labelTotalAfterTax" destination="jC2-K9-BQh" id="ozm-nt-Srx"/>
                         <outlet property="labelTotalAfterTaxAmount" destination="BFk-aH-LMN" id="wcQ-mS-l2K"/>
+                        <outlet property="labelTotalAfterTip" destination="2ml-nq-YYq" id="NWk-yw-PpZ"/>
                         <outlet property="labelTotalAfterTipAmount" destination="VM5-Np-3Aw" id="22X-oS-vuH"/>
                         <outlet property="sliderTipPercentage" destination="ttA-Wg-q6K" id="yOI-pA-Qv8"/>
                     </connections>
                 </viewController>
                 <customObject id="Vfe-EF-Nb4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="753" y="811"/>
+            <point key="canvasLocation" x="753" y="1091"/>
         </scene>
     </scenes>
 </document>

@@ -50,6 +50,8 @@ class TaxViewController: NSViewController {
     
     let numberTaxAmount = floatTaxAmount as NSNumber  // used for formatting
     
+    
+    
     labelTaxAmount.stringValue = publicFormatter.string(from: numberTaxAmount)!
     
     let numberTotalAfterTaxAmount = (floatTaxAmount + floatSubTotalAmount) as NSNumber  // used for formatting
@@ -58,5 +60,113 @@ class TaxViewController: NSViewController {
     
     labelTotalAfterTax.stringValue = publicFormatter.string(from: numberTotalAfterTaxAmount)!
     
+    
+    
   }
 }
+
+
+// Stack View
+
+// Stack View
+// Group together UI elements to be as one element in the layout
+// Easier to organize UI elements when grouped together into a stack view
+// Adjustments to spacing within stack view
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Position Contraints
+// Size Constraints
+// Align Constraints
+
+//Position Constraints
+
+// Leading - constraint on the leading edge (left-side edge) of the selected UI element (view) to the closest other UI element on that side.
+
+// Trailing - constraint on the trailing edge (right-side edge) of the selected UI element (view) to the closest other UI element on that side.
+
+// Top - constraint on the top edge of the selected UI element (view) to the closest other UI element on the top side.
+
+// Bottom - constraint on the bottom edge of the selected UI element (view) to the closest other UI element on the bottom side.
+
+
+
+// Top left corner = top leading
+
+// Top right corner = top trailing
+
+// Bottom left corner = bottom leading
+
+// Bottom right corner = bottom trailing
+
+
+// Size Constraints
+
+// Width - keep the same width of the selected view or UI element.
+
+// Height - keep the same height of the selected view or UI element.
+
+// Equal Width - keep the width of the selected view equal to width of another view or UI element.
+
+// Equal Height - keep the height of the selected view equal to height of another view or UI element.
+
+// Aspect Ratio - keep the same proportion between height and width.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Align Constraints
+
+// Horizonal - align selected UI element (view) to the horizontal center of the view it is contained in
+
+// Vertical - align selected UI element (view) to the vertical center of the view it is contained in
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
