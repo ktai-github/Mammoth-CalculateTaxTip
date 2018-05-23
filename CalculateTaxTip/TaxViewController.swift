@@ -25,16 +25,14 @@ class TaxViewController: NSViewController {
       
       publicFormatter.numberStyle = NumberFormatter.Style.currency
       
-      textFieldSubTotal.alignment = NSTextAlignment.right
+      textAlignmentRight(textItems: [textFieldSubTotal, textFieldTaxRate, labelTaxAmount, labelTotalAfterTax])
+      
       textFieldSubTotal.floatValue = 0.00
       
-      textFieldTaxRate.alignment = NSTextAlignment.right
       textFieldTaxRate.floatValue = 5.00
       
-      labelTaxAmount.alignment = NSTextAlignment.right
       labelTaxAmount.stringValue = "$" + String(format: "%.2f", 0.00)
       
-      labelTotalAfterTax.alignment = NSTextAlignment.right
       labelTotalAfterTax.stringValue = "$" + String(format: "%.2f", 0.00)
     }
     
@@ -50,8 +48,6 @@ class TaxViewController: NSViewController {
     
     let numberTaxAmount = floatTaxAmount as NSNumber  // used for formatting
     
-    
-    
     labelTaxAmount.stringValue = publicFormatter.string(from: numberTaxAmount)!
     
     let numberTotalAfterTaxAmount = (floatTaxAmount + floatSubTotalAmount) as NSNumber  // used for formatting
@@ -60,9 +56,15 @@ class TaxViewController: NSViewController {
     
     labelTotalAfterTax.stringValue = publicFormatter.string(from: numberTotalAfterTaxAmount)!
     
-    
-    
   }
+  
+  //  set text alignment to the right for text fields and labels
+  private func textAlignmentRight(textItems: [NSControl]) {
+    for textItem in textItems {
+      textItem.alignment = NSTextAlignment.right
+    }
+  }
+  
 }
 
 

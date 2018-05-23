@@ -38,123 +38,20 @@ class TipViewController: NSViewController {
         super.viewDidLoad()
         // Do view setup here.
     
-      labelSubTotalAmount.alignment = .right
+    alignmentRight(labels: [labelSubTotalAmount, labelTotalAfterTaxAmount, labelTipAmount, labelTotalAfterTipAmount])
     
-      labelTotalAfterTaxAmount.alignment = .right
+    labelTipAmount.floatValue = 0.00
     
-      labelTipAmount.alignment = .right
-    
-      labelTipAmount.floatValue = 0.00
-    
-      labelTotalAfterTipAmount.alignment = .right
-    
-      labelTotalAfterTipAmount.floatValue = 0.00
+    labelTotalAfterTipAmount.floatValue = 0.00
     
 //    MARK: translatesAutoresizingMaskIntoConstraints
 //    THIS IS SUPER IMPORTANT TO MAKE CONSTRAINTS WORK PROGRAMMATICALLY
 //    =====================================================================
-    labelSubTotal.translatesAutoresizingMaskIntoConstraints = false
-    
-    labelSubTotalAmount.translatesAutoresizingMaskIntoConstraints = false
-    
-    labelTotalAfterTax.translatesAutoresizingMaskIntoConstraints = false
-    
-    labelTotalAfterTaxAmount.translatesAutoresizingMaskIntoConstraints = false
-    
-    labelTipSlider.translatesAutoresizingMaskIntoConstraints = false
-    
-    sliderTipPercentage.translatesAutoresizingMaskIntoConstraints = false
-    
-    labelTip.translatesAutoresizingMaskIntoConstraints = false
-    
-    labelTipAmount.translatesAutoresizingMaskIntoConstraints = false
-    
-    labelTotalAfterTip.translatesAutoresizingMaskIntoConstraints = false
-    
-    labelTotalAfterTipAmount.translatesAutoresizingMaskIntoConstraints = false
-    
-    buttonCalculateTip.translatesAutoresizingMaskIntoConstraints = false
+    translateAutoresizingMaskIntoConstraintsFalse(controls: [labelSubTotal,
+                                                             labelSubTotalAmount, labelTotalAfterTax, labelTotalAfterTaxAmount, labelTipSlider, sliderTipPercentage, labelTip, labelTipAmount, labelTotalAfterTip, labelTotalAfterTipAmount, buttonCalculateTip])
 //    =====================================================================
 
-//    MARK: labelSubTotal Constraints
-    
-    labelSubTotal.topAnchor.constraint(equalTo: labelSubTotalAmount.topAnchor, constant: 0).isActive = true
-    
-    labelSubTotal.topAnchor.constraint(equalTo: view.topAnchor, constant: 20.0).isActive = true
-    
-    labelSubTotal.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0).isActive = true
-    
-    labelSubTotal.bottomAnchor.constraint(equalTo: labelTotalAfterTax.topAnchor, constant: -10.0).isActive = true
-    
-//    MARK: labelTotalAfterTax Constraints
-    
-    labelTotalAfterTax.topAnchor.constraint(equalTo: labelTotalAfterTaxAmount.topAnchor, constant: 0).isActive = true
-    
-    labelTotalAfterTax.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0).isActive = true
-    
-    labelTotalAfterTax.bottomAnchor.constraint(equalTo: labelTipSlider.topAnchor, constant: -15.0).isActive = true
-    
-//    MARK: labelTipSlider Constraints
-    
-    labelTipSlider.topAnchor.constraint(equalTo: sliderTipPercentage.topAnchor, constant: 0).isActive = true
-    
-    labelTipSlider.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0).isActive = true
-    
-    labelTipSlider.bottomAnchor.constraint(equalTo: labelTip.topAnchor, constant: -20.0).isActive = true
-    
-//    MARK: labelTip Constraints
-    
-    labelTip.topAnchor.constraint(equalTo: labelTipAmount.topAnchor, constant: 0).isActive = true
-    
-    labelTip.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0).isActive = true
-    
-    labelTip.bottomAnchor.constraint(equalTo: labelTotalAfterTip.topAnchor, constant: -5.0).isActive = true
-    
-//    MARK: labelTotalAfterTip Constraints
-    
-    labelTotalAfterTip.topAnchor.constraint(equalTo: labelTotalAfterTipAmount.topAnchor, constant: 0).isActive = true
-    
-    labelTotalAfterTip.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0).isActive = true
-    
-//    MARK: labelSubTotalAmount Constraint
-    
-    labelSubTotalAmount.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20.0).isActive = true
-    
-//    MARK: labelTotalAfterTaxAmount Constraint
-    
-    labelTotalAfterTaxAmount.trailingAnchor.constraint(equalTo: labelSubTotalAmount.trailingAnchor, constant: 0).isActive = true
-    
-//    MARK: sliderTipPercentage Constraints
-    
-    sliderTipPercentage.widthAnchor.constraint(equalToConstant: 162.0).isActive = true
-    
-    sliderTipPercentage.trailingAnchor.constraint(equalTo: labelSubTotalAmount.trailingAnchor, constant: 0).isActive = true
-    
-    sliderTipPercentage.bottomAnchor.constraint(equalTo: labelTipPercentage.topAnchor, constant: 0).isActive = true
-    
-//    MARK: labelTipPercentage Constraints
-    
-    labelTipPercentage.trailingAnchor.constraint(equalTo: labelSubTotalAmount.trailingAnchor, constant: 0).isActive = true
-    
-    labelTipPercentage.bottomAnchor.constraint(equalTo: labelTipAmount.topAnchor, constant: -10.0).isActive = true
-    
-//    MARK: labelTipAmount Constraint
-    
-    labelTipAmount.trailingAnchor.constraint(equalTo: labelSubTotalAmount.trailingAnchor, constant: 0).isActive = true
-    
-//    MARK: labelTotalAfterTipAmount Constraints
-    
-    labelTotalAfterTipAmount.trailingAnchor.constraint(equalTo: labelSubTotalAmount.trailingAnchor, constant: 0).isActive = true
-    
-    labelTotalAfterTipAmount.bottomAnchor.constraint(equalTo: buttonCalculateTip.topAnchor, constant: -20.0).isActive = true
-    
-//    MARK: buttonCalculateTip Constraints
-    
-    buttonCalculateTip.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20.0).isActive = true
-    
-    buttonCalculateTip.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0).isActive = true
-    
-    buttonCalculateTip.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20.0).isActive = true
+    setConstraintsForControls()
     
     }
   
@@ -188,4 +85,126 @@ class TipViewController: NSViewController {
     
   }
   
+  private func alignmentRight(labels: [NSTextField]) {
+    for label in labels {
+      label.alignment = .right
+    }
+  }
+  
+  private func translateAutoresizingMaskIntoConstraintsFalse(controls: [NSControl]) {
+    for control in controls {
+      control.translatesAutoresizingMaskIntoConstraints = false
+    }
+  }
+  
+//  line up the top edge of a text field with the top edge of corresponding control on other side of the tip view controller
+  private func topAnchorToTopAnchorConstraint(firstItem: NSTextField, secondItem: NSControl)  {
+    
+    firstItem.topAnchor.constraint(equalTo: secondItem.topAnchor, constant: 0).isActive = true
+    
+  }
+  
+//  set the spacing between leading edge of a control to leading edge of the view to 20
+  private func leadingAnchorToLeadingAnchorConstraint(item: NSControl) {
+    
+    item.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0).isActive = true
+    
+  }
+  
+//  set the spacing between bottom edge of a control to the top edge of the control below it to a specified constant. this needs to be a negative constant so it has to be multiplied by 1
+  private func bottomAnchorToTopAnchorConstraint(firstItem: NSControl, secondItem: NSControl, withConstant: CGFloat) {
+    
+    firstItem.bottomAnchor.constraint(equalTo: secondItem.topAnchor, constant: withConstant * -1).isActive = true
+    
+  }
+  
+//  set the spacing between the trailing edge of a control to the trailing edge of labelSubTotalAmount to line up with it
+  private func trailingAnchorToTrailingAnchorConstraint(firstItem: NSControl) {
+    
+    firstItem.trailingAnchor.constraint(equalTo: labelSubTotalAmount.trailingAnchor, constant: 0).isActive = true
+    
+  }
+  
+  fileprivate func setConstraintsForControls() {
+    
+    //    MARK: labelSubTotal Constraints
+    
+    topAnchorToTopAnchorConstraint(firstItem: labelSubTotal, secondItem: labelSubTotalAmount)
+    
+    labelSubTotal.topAnchor.constraint(equalTo: view.topAnchor, constant: 20.0).isActive = true
+    
+    leadingAnchorToLeadingAnchorConstraint(item: labelSubTotal)
+    
+    bottomAnchorToTopAnchorConstraint(firstItem: labelSubTotal, secondItem: labelTotalAfterTax, withConstant: 10.0)
+    
+    //    MARK: labelTotalAfterTax Constraints
+    
+    topAnchorToTopAnchorConstraint(firstItem: labelTotalAfterTax, secondItem: labelTotalAfterTaxAmount)
+    
+    leadingAnchorToLeadingAnchorConstraint(item: labelTotalAfterTax)
+    
+    bottomAnchorToTopAnchorConstraint(firstItem: labelTotalAfterTax, secondItem: labelTipSlider, withConstant: 15.0)
+    
+    //    MARK: labelTipSlider Constraints
+    
+    topAnchorToTopAnchorConstraint(firstItem: labelTipSlider, secondItem: sliderTipPercentage)
+    
+    leadingAnchorToLeadingAnchorConstraint(item: labelTipSlider)
+    
+    bottomAnchorToTopAnchorConstraint(firstItem: labelTipSlider, secondItem: labelTip, withConstant: 20.0)
+    
+    //    MARK: labelTip Constraints
+    
+    topAnchorToTopAnchorConstraint(firstItem: labelTip, secondItem: labelTipAmount)
+    
+    leadingAnchorToLeadingAnchorConstraint(item: labelTip)
+    
+    bottomAnchorToTopAnchorConstraint(firstItem: labelTip, secondItem: labelTotalAfterTip, withConstant: 5.0)
+    
+    //    MARK: labelTotalAfterTip Constraints
+    
+    topAnchorToTopAnchorConstraint(firstItem: labelTotalAfterTip, secondItem: labelTotalAfterTipAmount)
+    
+    leadingAnchorToLeadingAnchorConstraint(item: labelTotalAfterTip)
+    
+    //    MARK: labelSubTotalAmount Constraint
+    
+    labelSubTotalAmount.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20.0).isActive = true
+    
+    //    MARK: labelTotalAfterTaxAmount Constraint
+    
+    trailingAnchorToTrailingAnchorConstraint(firstItem: labelTotalAfterTaxAmount)
+    
+    //    MARK: sliderTipPercentage Constraints
+    
+    sliderTipPercentage.widthAnchor.constraint(equalToConstant: 162.0).isActive = true
+    
+    trailingAnchorToTrailingAnchorConstraint(firstItem: sliderTipPercentage)
+    
+    bottomAnchorToTopAnchorConstraint(firstItem: sliderTipPercentage, secondItem: labelTipPercentage, withConstant: 0)
+    
+    //    MARK: labelTipPercentage Constraints
+    
+    trailingAnchorToTrailingAnchorConstraint(firstItem: labelTipPercentage)
+    
+    bottomAnchorToTopAnchorConstraint(firstItem: labelTipPercentage, secondItem: labelTipAmount, withConstant: 10.0)
+    
+    //    MARK: labelTipAmount Constraint
+    
+    trailingAnchorToTrailingAnchorConstraint(firstItem: labelTipAmount)
+    
+    //    MARK: labelTotalAfterTipAmount Constraints
+    
+    trailingAnchorToTrailingAnchorConstraint(firstItem: labelTotalAfterTipAmount)
+    
+    bottomAnchorToTopAnchorConstraint(firstItem: labelTotalAfterTipAmount, secondItem: buttonCalculateTip, withConstant: 20.0)
+    
+    //    MARK: buttonCalculateTip Constraints
+    
+    buttonCalculateTip.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20.0).isActive = true
+    
+    buttonCalculateTip.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20.0).isActive = true
+    
+    buttonCalculateTip.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20.0).isActive = true
+  }
 }
