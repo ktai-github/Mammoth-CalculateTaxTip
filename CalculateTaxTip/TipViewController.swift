@@ -111,7 +111,7 @@ class TipViewController: NSViewController {
     
   }
   
-//  set the spacing between bottom edge of a control to the top edge of the control below it to a specified constant. this needs to be a negative constant so it has to be multiplied by 1
+//  set the spacing between bottom edge of a control to the top edge of the control below it to a specified constant. this needs to be a negative constant so it has to be multiplied by -1
   private func bottomAnchorToTopAnchorConstraint(firstItem: NSControl, secondItem: NSControl, withConstant: CGFloat) {
     
     firstItem.bottomAnchor.constraint(equalTo: secondItem.topAnchor, constant: withConstant * -1).isActive = true
